@@ -1,0 +1,14 @@
+CC = gcc
+CFLAGS = -g -Wall -lm -std=c99
+all: build
+
+build: tema1
+
+tema1: tema1.o
+	$(CC) -o tema1 tema1.o $(CFLAGS)
+
+tema1.o: tema1.c
+	$(CC) -c tema1.c $(CFLAGS)
+
+clean:
+	rm -rf *.o tema1
